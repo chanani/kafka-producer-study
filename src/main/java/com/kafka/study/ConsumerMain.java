@@ -15,6 +15,7 @@ public class ConsumerMain {
     private final static String TOPIC_NAME = "test"; // 토픽명
     private final static String BOOTSTRAP_SERVERS = "my-kafka:9092"; // 클러스터명
 
+    // 메인 실행했을 때 내부 send 로직 작동
     public static void main(String[] args) {
 
         Properties configs = new Properties(); // 설정 객체 생성
