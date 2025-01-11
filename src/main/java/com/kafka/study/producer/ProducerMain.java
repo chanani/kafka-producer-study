@@ -1,4 +1,4 @@
-package com.kafka.study;
+package com.kafka.study.producer;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -9,13 +9,16 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
-public class ConsumerMain {
+public class ProducerMain {
 
-    private final static Logger logger = LoggerFactory.getLogger(ConsumerMain.class);
+    private final static Logger logger = LoggerFactory.getLogger(ProducerMain.class);
     private final static String TOPIC_NAME = "test"; // 토픽명
     private final static String BOOTSTRAP_SERVERS = "my-kafka:9092"; // 클러스터명
 
     // 메인 실행했을 때 내부 send 로직 작동
+    /* 확인 데이터 확인 방법
+     bin/kafka-console-consumer.sh --bootstrap-server my-kafka:9092 --topic test --from-beginning
+     */
     public static void main(String[] args) {
 
         Properties configs = new Properties(); // 설정 객체 생성
