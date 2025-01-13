@@ -21,8 +21,8 @@ public class ProducerKeyValueMain {
 
         Properties configs = new Properties(); // 설정 객체 생성
         configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS); // 설정한 내용 config에 넣기
-        configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName()); // 직렬화 방법
-        configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName()); // 역직렬화 방법
+        configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName()); // key 직렬화 방법
+        configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName()); // value 직렬화 방법
 
         // 레코드 객체 생생(직렬화에 StringSerializer를 사용했기 때문에 객체의 매개변수 타입은 String)
         KafkaProducer<String, String> producer = new KafkaProducer<>(configs);
