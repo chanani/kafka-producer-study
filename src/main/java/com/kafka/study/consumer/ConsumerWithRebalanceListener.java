@@ -14,6 +14,7 @@ import java.util.Arrays;
 import java.util.Properties;
 
 // 리밸런스 리스너를 가진 컨슈머
+// EditConfigurations -> modify options -> Allow multiple instance
 public class ConsumerWithRebalanceListener {
 
     private final static Logger logger = LoggerFactory.getLogger(ProducerWithSyncCallbackMain.class);
