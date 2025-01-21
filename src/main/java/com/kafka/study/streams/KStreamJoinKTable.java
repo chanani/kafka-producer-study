@@ -9,10 +9,10 @@ import org.apache.kafka.streams.kstream.KTable;
 
 import java.util.Properties;
 
-// KTable과 KStream 조인
+// Streams DSL KTable과 KStream 조인
 
 /**
- * 시작 전 준비(파티션은 꼭 동일하게 생성해야된다.)
+ * 시작 전 준비(KTable과 KStream 조인을 하려면 파티션은 꼭 동일하게 생성해야된다.)
  * 1. address topic 생성 : bin/kafka-topics.sh --bootstrap-server my-kafka:9092 --partitions 3 --topic address --create
  * 2. order topic 생성 : bin/kafka-topics.sh --bootstrap-server my-kafka:9092 --partitions 3 --topic order --create
  * 3. order-join topic 생성 : bin/kafka-topics.sh --bootstrap-server my-kafka:9092 --partitions 3 --topic order-join --create
