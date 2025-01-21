@@ -7,12 +7,15 @@ import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStream;
 import java.util.Properties;
 
+// kafka streams filtering
+// bin/kafka-console-producer.sh --bootstrap-server my-kafka:9092 --topic stream-log
+// kafka_2.12-2.5.0 % bin/kafka-console-consumer.sh --bootstrap-server my-kafka:9092 --topic stream-log-filter
 public class StreamsFilter {
 
     private static String APPLICATION_NAME = "streams-filter-application";
     private static String BOOTSTRAP_SERVERS = "my-kafka:9092";
-    private static String STREAM_LOG = "stream_log";
-    private static String STREAM_LOG_FILTER = "stream_log_filter";
+    private static String STREAM_LOG = "stream-log";
+    private static String STREAM_LOG_FILTER = "stream-log-filter";
 
     public static void main(String[] args) {
 
@@ -25,7 +28,7 @@ public class StreamsFilter {
         StreamsBuilder builder = new StreamsBuilder();
         KStream<String, String> streamLog = builder.stream(STREAM_LOG);
 
-        streamLog.filter((key, value) -> value.length() > 5).to(STREAM_LOG);
+        streamLog.filter((key, value) -> value.length() > 5).to(STREAM_LOG_FILTER);
 
         KafkaStreams streams;
         streams = new KafkaStreams(builder.build(), props);
@@ -33,3 +36,4 @@ public class StreamsFilter {
 
     }
 }
+

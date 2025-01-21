@@ -23,11 +23,13 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     // kafka
-    implementation 'org.apache.kafka:kafka-clients:2.5.0'
+    implementation 'org.apache.kafka:kafka-clients:3.2.0'
     implementation  'org.slf4j:slf4j-simple:1.7.30'
 
     // kafka streams
-    implementation 'org.apache.kafka:kafka-streams:2.5.0'
+    // implementation 'org.apache.kafka:kafka-streams:2.5.0'
+    // m1 칩을 사용할 경우 rocksDB 버전 6.29.4.1 이상이어야 작동합니다.
+    implementation 'org.apache.kafka:kafka-streams:3.2.0'
 }
 
 tasks.named('test') {
